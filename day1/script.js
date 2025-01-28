@@ -22,4 +22,8 @@ let p = document.createElement("p");
 p.textContent = "This is for a paragraph.";
 document.body.appendChild(p);
 
+//table
+let data = [{ name: "Payal", age: 19 }, { name: "Komal", age: 20 }];
+console.table(data);
+
 
