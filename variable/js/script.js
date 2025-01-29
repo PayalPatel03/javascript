@@ -5,26 +5,18 @@ let name = 'Payal';
 let valid = false;
 let value = null;
 
+//creating object
+let obj={
+    1:'one' ,
+    2:'two'
+}
+
 console.log("typeof age:" + typeof age);
 console.log("typeof pi:" + typeof pi);
 console.log("typeof name:" + typeof name);
 console.log("typeof valid:" + typeof valid);
 console.log("typeof value:" + typeof value);
+console.log("typeof obj:" + typeof obj);
 
-//arithmetic operator
-let a=10;
-let b=5;
-
-console.log(a+b);
-console.log(a-b);
-console.log("Multiplication: "+ a*b);
-console.log("Division: "+ a/b);
-console.log("Exponetional:"+ a**2);
-
-
-
-
-
-
-
+console.log(obj);
 
