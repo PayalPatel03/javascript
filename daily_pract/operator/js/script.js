@@ -8,6 +8,11 @@ let d=30;
 let x=12;
 let y=11;
 
+// let p=200;
+// let q='200';
+
+// console.log(p+q);
+// console.log(p-q);
 
 console.log(a+b);
 console.log(a-b);
@@ -38,6 +43,21 @@ y=temp;
 
 console.log("After swaping x is:"+ x);
 console.log("After swaping y is:"+ y);
+
+// //garde calc
+// let marks = parseInt (prompt("Enter marks"));
+// let avg = marks; 
+// console.log("The average marks is: " + avg);
+
+// let grade = avg >= 80 ? 'A' : 
+//             avg >= 60 ? 'B' : 
+//             avg > 50 ? 'C' : 
+//             'Pass class';
+
+// console.log(grade);
+ 
+
+
 
 
 
