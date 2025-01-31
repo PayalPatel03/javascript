@@ -11,7 +11,7 @@ let PT=600;
 let TDS=600;
 
 let gross=baseSal+HRA+MA+DA+TA;
-let totalSal=gross-PF-PT-TA;
+let totalSal=gross-PF-PT-TDS;
 
 console.log("Employ name: ",emp_name);
 console.log("Base Salary: ",baseSal);
