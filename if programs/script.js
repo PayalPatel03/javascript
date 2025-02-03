@@ -173,4 +173,59 @@ if (month === 12 || month === 1 || month === 2) {
 }
 console.log("Month " + month + " is in " + season + ".");
 
-  
+// P R O G-13 voting criteria
+let age=25;
+let citizen=true;
+
+if(age>=18){
+    if(citizen){
+        console.log("You are eligible for voting");
+    }
+    else{
+        console.log("You are not eligible for voting");
+    }
+}
+else{
+    console.log("You are small kid..");
+    
+}
+
+// P R O G-14 password checker
+let password = "123$";
+
+if (password.length >= 8) {
+    console.log("Password is valid.");
+   } 
+else {
+    console.log("Password must be at least 8 characters long.");
+   }
+
+//P R O G-15 movie rating eigiblity
+
+let movie_age=18;
+ if(movie_age>=18){
+    console.log("You are eligible for watching movie");
+ }
+ else{
+    console.log("You are not eligible for watching movie");
+ }
+
+ //P R O G-16 prime number
+ // Program 16: Check if a number is prime
+// let primeCandidate = 17;
+// let isPrime = true;
+// if (primeCandidate <= 1) {
+//  isPrime = false;
+// } else {
+//  for (let i = 2; i < primeCandidate; i++) {
+//  if (primeCandidate % i === 0) {
+//  isPrime = false;
+//  break;
+//  }
+//  }
+// }
+// if (isPrime) {
+//  console.log(primeCandidate + " is a prime number.");
+// } else {
+//  console.log(primeCandidate + " is not a prime number.");
+// }
