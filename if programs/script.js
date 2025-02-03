@@ -61,6 +61,77 @@ if(user==="xyz"){
     }
 }
 else{
-    console.log("Unauthorized user");
-    
+    console.log("Unauthorized user");   
 }
+
+//P R O G-6 Temperature classification
+let temp=20;
+if(temp>30){
+    console.log('Temperature:' + temp + " Very hot..");
+}
+else if(temp>=20){
+    console.log('Temperature:' + temp + " Warm...");
+}
+else{
+    console.log('Temperature:' + temp + " Very cold...");
+}
+
+//P R O G-7 Day of week from number
+let day_num=2;
+let day_name="Tuesday";
+
+if(day_num===1 && day_name==="Monday"){
+    console.log('Day number: ' + day_num + "---->" + " Day name: " + day_name );    
+}
+else if(day_num===2 && day_name==="Tuesday"){
+    console.log('Day number: ' + day_num + "---->" + " Day name: " + day_name ); 
+}
+else if(day_num===3 && day_name==="Wednesday"){
+    console.log('Day number: ' + day_num + "---->" + " Day name: " + day_name ); 
+}
+else if(day_num===4 && day_name==="Thursday"){
+    console.log('Day number: ' + day_num + "---->" + " Day name: " + day_name ); 
+}
+else if(day_num===5 && day_name==="Friday"){
+    console.log('Day number: ' + day_num + "---->" + " Day name: " + day_name ); 
+}
+else if(day_num===6 && day_name==="Saturday"){
+    console.log('Day number: ' + day_num + "---->" + " Day name: " + day_name ); 
+}
+else if(day_num===7 && day_name==="Sunday"){
+    console.log('Day number: ' + day_num + "---->" + " Day name: " + day_name ); 
+}
+else{
+    console.log("Invalid !!..");
+}
+
+//P R O G-8 Discount criteria
+let memb=true;
+let spending=1000;
+
+if(memb){
+    if(spending>500){
+        console.log("Amount is : " + spending + " --:" + " You get a 30% discount.");
+    }
+    else{
+        console.log("You get a 10% discount.");
+    }
+}
+else{
+    console.log("You are not the member of this shop..");
+}
+
+//P R O G-9 string is empty or not
+
+let str="";
+
+if(str===""){
+    console.log("String is empty");
+}
+else{
+    console.log("String is not empty.");
+}
+
+//P R O G-10 leap year
+
+  
