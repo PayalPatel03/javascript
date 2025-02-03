@@ -133,5 +133,44 @@ else{
 }
 
 //P R O G-10 leap year
+let year=2002;
+if((year%4===0 && year%100!==0) || (year%400===0)) 
+{
+    console.log("Year : " + year + " is leap year");  
+}
+else{
+    console.log("Year : " + year + " is not a leap year");  
+}
+
+//P R O G-11 both are positive or not
+let a=40;
+let b=-20;
+if(a>0){
+    if(b>0){
+        console.log( a + " & " + b + " Both are positive numbers..");   
+    }
+    else{
+        console.log(a + " is positive & " + b + " is negative");
+    }
+}
+else{
+    console.log(a+" is not positive"); 
+}
+
+//P R O G-12 Season based on month
+let month = 10;
+let season = "";
+if (month === 12 || month === 1 || month === 2) {
+ season = "Winter";
+} else if (month >= 3 && month <= 5) {
+ season = "Summer";
+} else if (month >= 6 && month <= 8) {
+ season = "Monsoon";
+} else if (month >= 9 && month <= 11) {
+ season = "Bin mausmi varsad";
+} else {
+ season = "Invalid month";
+}
+console.log("Month " + month + " is in " + season + ".");
 
   
