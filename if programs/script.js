@@ -229,3 +229,4 @@ let movie_age=18;
 // } else {
 //  console.log(primeCandidate + " is not a prime number.");
 // }
+
