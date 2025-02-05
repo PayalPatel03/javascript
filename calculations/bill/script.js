@@ -1,7 +1,20 @@
-//BILL
-let name = "Wheat";
-let price = 80;
-let qty = 5;
-total=price*qty;
+let pr_name = "Kinderjoy" //
+let pr_price = 50; 
+let Pr_qty = 3; 
+let total = pr_price*Pr_qty; 
 
-let final_price= (price>=1500) ? total=total=15%:price>=1000 ? total=total-10%:price>=800 ? total=total-8% : total;
+
+let discount = total>=1500 ? 15/100 :
+               total>=1000 ? 10/100 : 
+               total>=800 ? 8/100 
+               :null;       
+                  
+let final_price = total - (total*discount); 
+
+
+console.log("Product Name:",pr_name);
+console.log("Product Price:",pr_price);
+console.log("Product Quantity:",Pr_qty);
+console.log("Total:",total);
+console.log("Discount:",discount);
+console.log("Net Total:",final_price);
