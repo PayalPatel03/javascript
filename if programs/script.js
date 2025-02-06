@@ -230,3 +230,45 @@ let movie_age=18;
 //  console.log(primeCandidate + " is not a prime number.");
 // }
 
+//P R O G-17 NUMBER WITH RANGE
+let number=8;
+if (number >= 10 && number <= 20) {
+    console.log(number + " is within the range 10 to 20.");
+   } else {
+    console.log(number + " is outside the range 10 to 20.");
+   }
+
+//P R O G-18 area
+let shape = "circle";
+let area = 0;
+if (shape === "circle") {
+ let radius = 5;
+ area = 22.7 * radius * radius;
+ console.log("Area of the circle is: " + area.toFixed(2));
+} else if (shape === "rectangle") {
+ let length = 10;
+ let width = 4;
+ area = length * width;
+ console.log("Area of the rectangle is: " + area);
+} else {
+ console.log("Shape not recognized.");
+}
+
+//P R O G-19 user valadition
+let inputUsername = "user1";
+let inputPassword = "pass123";
+if (inputUsername === "user1" && inputPassword === "pass123") {
+ console.log("User login successful.");
+} else {
+ console.log("Invalid username or password.");
+}
+
+//P R O G-20 Multiple Condition Check
+let customerAge = 30;
+let isMemberStatus = true;
+let purchaseAmount = 250;
+if (customerAge >= 25 && isMemberStatus && purchaseAmount >= 200) {
+ console.log("Congratulations! You qualify for our special offer.");
+} else {
+ console.log("Sorry, you do not qualify for the special offer.");
+}
