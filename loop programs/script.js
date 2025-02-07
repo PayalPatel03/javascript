@@ -39,10 +39,39 @@
 // console.log(`Answer:${ans}`);
 
 //prog-6 Sum of first 10 natural numbers (do-while loop)
-let ans = 0;
-let i = 1;
-do {
- ans += i;
- i++;
-} while (i <= 10);
-console.log(`Answer:${ans}`);
+// let ans = 0;
+// let i = 1;
+// do {
+//  ans += i;
+//  i++;
+// } while (i <= 10);
+// console.log(`Answer:${ans}`);
+
+//prog-7 Print even numbers from 1 to 20
+// let str='';
+// for(let i=2;i<=20;i+=2){
+//     str+=i +',';
+// }
+// console.log(str);
+
+//prog-8  Print odd numbers from 1 to 20
+// let str='';
+// for(let i=1;i<=20;i+=2){
+//     str+=i +',';
+// }
+// console.log(str);
+
+//prog-9 Print multiplication table of 5
+// for(let i=1;i<=10;i++){
+//     console.log("5*"+i + "=" + 5*i);
+// }
+
+//prog-10 Reverse countdown from 10 to 1
+let i=10;
+let str='';
+while(i>=1){
+    str += i+' , ';
+    i--; 
+}console.log(str);
+
+
