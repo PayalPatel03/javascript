@@ -67,11 +67,13 @@
 // }
 
 //prog-10 Reverse countdown from 10 to 1
-let i=10;
-let str='';
-while(i>=1){
-    str += i+' , ';
-    i--; 
-}console.log(str);
+// let i=10;
+// let str='';
+// while(i>=1){
+//     str += i+' , ';
+//     i--; 
+// }console.log(str);
+
+//prog-11 Factorial of a number (for loop)
 
 
