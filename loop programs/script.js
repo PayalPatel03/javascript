@@ -75,5 +75,31 @@
 // }console.log(str);
 
 //prog-11 Factorial of a number (for loop)
+// let f=1;
+// let number=5;
+// for(let i=1;i<=number;i++){
+//     f*=i;
+// }
+// console.log(`Factorial : ${f}`);
+
+//prog-12 Find the sum of digits of a number
+// let number = 3053, sum = 0;
+// while (number>0) {
+//  sum += number % 10;
+//  number = Math.floor(number / 10);
+// }
+// console.log(`Sum of digits: ${sum}`);
+
+//prog-13 Reverse a number
+// let number = 3053, reverse = 0;
+// while (number > 0) {
+//  reverse = reverse * 10 + (number % 10);
+//  number = Math.floor(number / 10);
+// }
+// console.log(`reversed number : ${reverse}`);
+
+
+
+
 
 
