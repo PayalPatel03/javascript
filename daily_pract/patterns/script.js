@@ -14,6 +14,21 @@
 
 // document.write(str);
 
+// //41
+// //41  42
+// //41  42  43
+// //41  42  43  44
+// //41  42  43  44  45
+// let str='';
+// let row;
+// let n=41;
+// for(let i=0;i<=n;i++){
+//     for(let j=0;j<=i;j++){
+//         str+=j+n+" ";
+//     }
+//     str+="<br>";
+// }
+// document.write(str);
 
 //1 1 1 1 1
 //2 2 2 2 2
@@ -72,6 +87,35 @@
 // for(let i=5;i>=1;i--){
 //     for(j=i;j>=1;j--){
 //         str+=j+" ";
+//     }
+//     str+="<br>";
+// }
+// document.write(str);
+
+//5
+//4 5
+//3 4 5
+//2 3 4 5
+//1 2 3 4 5
+// let str='';
+// for(let i=5;i>=1;i--){
+//     for(let j=i;j<=5;j++){
+//         str+=j+" ";
+//     }
+//     str+="<br>";
+// }
+// document.write(str);
+
+//5
+//4 4
+//3 3 3
+//2 2 2 2
+//1 1 1 1 1
+// erroe
+// let str='';
+// for(let i=5;i>=1;i--){
+//     for(let j=5;i>=i;j--){
+//         str+=i+" ";
 //     }
 //     str+="<br>";
 // }
