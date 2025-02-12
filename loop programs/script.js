@@ -98,6 +98,43 @@
 // }
 // console.log(`reversed number : ${reverse}`);
 
+//prog-14 Check if a number is prime
+// let num = 13; 
+// isPrime = true;
+// for (let i = 2; i <= Math.sqrt(num); i++) {
+//  if (num % i === 0) {
+//  isPrime = false;
+//  break;
+//  }
+// }
+// console.log(num, "is Prime:", isPrime);
+
+//prog-15 fibbonaii seies
+// let a=0,b=1,count=0;
+// let n=5
+// do{
+//     console.log(a+" ");
+//     let sum=a+b;
+//     a=b;
+//     b=sum;
+//     count++;
+    
+// }while(count<n);
+
+//prog-16 Find the largest digit in a number
+
+// let num = 8375;
+// let max=0;
+// while (num > 0) {
+//  let digit = num % 10;
+//  if (digit > max) max = digit;
+//  num =Math.floor (num / 10);
+// }
+// console.log("Largest digit:", max);
+
+//prog-17 7. Calculate power of a number (a^b)
+
+
 
 
 
