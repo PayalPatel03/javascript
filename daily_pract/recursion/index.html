@@ -1,6 +1,24 @@
 <script>
 //1 way simple by function keyword
-
+//     let num=10;
+//    function print(){
+//     console.log("Hello"+num);
+//     num++;
+//     print();
+//     return;
+//    }
    
+function fact(value){
+    let f1;
+    if(value<=1){
+        return 1;
+    }
+    else{
+        f1 = fact(value - 1);
+    }
+    console.log(value+"*"+f1);
+    return value * f1;
+}
+console.log(fact(5));
     
 </script>
