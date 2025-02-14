@@ -2,8 +2,6 @@ let num1;
 let num2;
 document.getElementById('result').classList.add('hidden');
 
-
-
 function printValue(){
     num1 = document.getElementById('num1').value;
     num2 = document.getElementById('num2').value;
