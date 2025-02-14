@@ -17,11 +17,7 @@ body{
     margin: 10px;
     background-color: rgb(197, 130, 193);
 }
-/* form div{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-} */
+
 
 form{
     text-align: center;
@@ -35,6 +31,10 @@ form input{
     border-radius: 50px;
     border: none;
 }
+/* form input:hover{
+    background-color: rgb(167, 225, 191);
+    transition: 1s;
+} */
 form ::placeholder{
     color: rgb(145, 138, 252);
 }
@@ -48,6 +48,10 @@ form button{
     border: none;
 }
 
+/* form button:hover{
+    background-color: rgb(167, 225, 191);
+    transition: 1s;
+} */
 #result{
     width: 100%;
     padding: 12px;
