@@ -1,0 +1,26 @@
+
+<script>
+//Anonymous Functions
+// setTimeout(function() {
+//  console.log("Delayed message");
+// }, 2000);
+
+//call back function
+// function processInput(callback) {
+//  let name = "Andrew";
+//  callback(name);
+// }
+// processInput(function(name) {
+//  console.log("Hello!! " + name);
+// }); 
+
+//Higher order function
+function multiplyBy(factor) {
+ return function(number) {
+ return number * factor;
+ };
+}
+const double = multiplyBy(3);
+console.log(double(5)); 
+
+</script>
