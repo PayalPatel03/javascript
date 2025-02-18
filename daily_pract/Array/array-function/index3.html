@@ -1,39 +1,75 @@
+<div id="root">
+    <table>
+        <thead>
+            <td>Name:</td>
+            <td>Email:</td>
+            <td>Password:</td>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
 <script>
-    //includes
-    // let arr= [10,40,28,56,9];
-    // console.log(arr.includes(10));
-
-    //for each
-    // let arr=[10,20,30,40,50]
-    // arr.forEach((elem)=>{
-    //     console.log(elem);
-    // });
-
-    //some
-    // let arr=[20,40,60,80,100];
-    // let val=arr.some((num)=>{num>30});
-    // console.log(val);
-
-    //findIndex
-    //  let arr=[10,20,30,40,50];
-    
-    // let index=arr.findIndex((val)=>val== 40);
-    // console.log(index);
-    
-    //indexof
-    // let arr=[10,20,30,40,50];
-    
-    // let index=arr.indexOf(20);
-    // console.log(index);
-
-    //every
-    // let arr = [1, 2, 3, 4, 5];
-    // const positive = arr.every(arr => arr > 0);
-    // console.log(positive);
-
+   
     //map
-    
+    let admin=[
+    {
+        id:1,
+        name:'Rakesh',
+        email:'rakesh@gmail.com',
+        password:12345678
+    },
+
+    {
+        id:2,
+        name:'Ramesh',
+        email:'ramesh@gmail.com',
+        password:5678
+    },
+
+    {
+        id:3,
+        name:'Rahul',
+        email:'rahul@gmail.com',
+        password:678
+    },
+
+    {
+        id:4,
+        name:'Ayush',
+        email:'ayush@gmail.com',
+        password:1238
+    },
+
+    {
+        id:5,
+        name:'Jash',
+        email:'jash@gmail.com',
+        password:12348
+    }
+    ]
+
+    let body=document.querySelector("#root table tbody");
     
 
+    admin.map((user,index)=>{
+        console.log(user.name);
+
+        body.innerHTML=`
+        <td>${user.name}</td>
+        <td>${user.email}</td>
+        <td>${user.password}</td>
+
+        `
+
+        
+        
+    })
+
+    
+
+//filter
+// let data=admin.filter((user)=>user.name!='Jash');
+// console.log(data);
 
 </script>

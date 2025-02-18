@@ -1,0 +1,47 @@
+<div id="root">
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+    let admin = [
+        { id: 1, name: 'Rakesh', email: 'rakesh@gmail.com', password: 12345678 },
+        { id: 2, name: 'Ramesh', email: 'ramesh@gmail.com', password: 5678 },
+        { id: 3, name: 'Rahul', email: 'rahul@gmail.com', password: 678 },
+        { id: 4, name: 'Ayush', email: 'ayush@gmail.com', password: 1238 },
+        { id: 5, name: 'Jash', email: 'jash@gmail.com', password: 12348 }
+    ];
+
+    let body = document.querySelector("#root table tbody");
+
+    admin.map((user) => {
+        // Create a new row for each user
+        let row = document.createElement('tr');
+
+        // Create the cells for the user's data
+        let nameCell = document.createElement('td');
+        nameCell.textContent = user.name;
+
+        let emailCell = document.createElement('td');
+        emailCell.textContent = user.email;
+
+        let passwordCell = document.createElement('td');
+        passwordCell.textContent = user.password;
+
+        // Append the cells to the row
+        row.appendChild(nameCell);
+        row.appendChild(emailCell);
+        row.appendChild(passwordCell);
+
+        // Append the row to the table body
+        body.appendChild(row);
+    });
+</script>
