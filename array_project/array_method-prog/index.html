@@ -1,0 +1,93 @@
+<script>
+    //squares on number
+    let num = [1,2,3,4,5];
+    let result = num.map(val => val * val);
+    console.log("Square of array is: "+result);
+
+    // find out even numbers
+    let arr = [1,2,3,4,5,6,7];
+    let evenNum = arr.filter(val => val % 2 === 0);
+    console.log("Even numbers are: "+evenNum);
+
+    //Prit each elment in array
+    const fruit = ["Kiwi","Chikoo","Litchi","Coconut"];
+    fruit.forEach(val => console.log(val));
+
+    // calculate sum of array
+    let sum = 0
+    let number = [1,2,3,4];
+    number.forEach(val => sum += val);
+    console.log(sum);
+
+    // find out odd numbers
+    let arr1 = [1,2,3,4,5,6,7,8,9,10];
+    let oddNum = arr1.filter(val => val % 2 !== 0);
+    console.log("Odd numbers are: "+oddNum);
+
+    // find index of element
+    const colors = ["Red","Green","Orange"];
+    console.log(colors.indexOf("Orange"))
+
+    // find index of first even number
+    const numbers = [1,3,8,6,10];
+    const evenNumm = numbers.findIndex(val => val % 2 === 0);
+    console.log(evenNumm);
+
+    //check if element exist in array or not
+    const name = ["Andrew","Jack","sthepen","John"];
+    console.log(name.includes("Jack"));
+
+    // CHECK IF ALL NUMBER IS POSITIVE
+    const posi = [6,8,12,45,5,4,15];
+    const posNumber = posi.every(val => val >= 0);
+    console.log(posNumber);
+
+    // CHECK IF ANY NUMBER IS NEGATIVE
+    const negative = [1,-5,-7,1,-2];
+    const newNegative = negative.some(val => val < 0);
+    console.log(newNegative)
+
+    //map
+    let admin=[
+    {
+        id:1,
+        name:'Rakesh',
+        email:'rakesh@gmail.com',
+        password:12345678
+    },
+
+    {
+        id:2,
+        name:'Ramesh',
+        email:'ramesh@gmail.com',
+        password:5678
+    },
+
+    {
+        id:3,
+        name:'Rahul',
+        email:'rahul@gmail.com',
+        password:678
+    },
+
+    {
+        id:4,
+        name:'Ayush',
+        email:'ayush@gmail.com',
+        password:1238
+    },
+
+    {
+        id:5,
+        name:'Jash',
+        email:'jash@gmail.com',
+        password:12348
+    }
+    ]
+
+//filter
+let data=admin.filter((user)=>user.name!='Jash');
+console.log(data);
+
+
+</script>
