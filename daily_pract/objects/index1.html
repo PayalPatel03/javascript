@@ -1,0 +1,46 @@
+<script>
+    //object methods
+    let user = {
+        name: "Andrew",
+        surname: "Doson",
+        email: "andrew@gmail.com",
+        password: "1256",
+        fullName: function () {
+            return this.name + " " + this.surname;
+        }
+    }
+    console.log(user.fullName());
+
+    //keys
+    let obj = {
+        a: 1,
+        b: 2,
+        c: 3
+    };
+    console.log(Object.keys(obj));
+
+    //values
+    console.log(Object.values(obj));
+
+    //entries
+    console.log(Object.entries(obj));
+
+    //freeze
+    const frozenObj = { a: 1 };
+    Object.freeze(frozenObj);
+    frozenObj.a = 2;
+    console.log(frozenObj.a);
+    //seal
+    
+    const sealedObj = { a: 1 };
+    Object.seal(sealedObj);
+    sealedObj.a = 2; // Allowed
+    delete sealedObj.a; // Not allowed
+    console.log(sealedObj); // { a: 2 }
+
+
+
+
+
+
+</script>

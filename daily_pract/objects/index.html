@@ -1,39 +1,45 @@
 <script>
-    let car = {
-        name: 'Harrier',
-        colour: 'Black',
-        model: '500'
+  let car = {
+    name: 'Harrier',
+    colour: 'Black',
+    model: '500'
+  }
+  console.log(car.model);
+  console.log(car.colour);
+  console.log(car.name);
+
+  //2
+  let person = {};
+
+  person.name = "Payal";
+  person.age = "19";
+  person.surname = "Patel";
+
+  console.log(person);
+  console.log(person.name + " is " + person.age + " years old.");
+
+  //nested objects
+  let obj1={
+    name:"John",
+    age:"20",
+     obj2:{
+      car1:"Harrier",
+      car2:"Swift",
+      car3:"Aura"
     }
-    console.log(car.model);
-    console.log(car.colour);
-    console.log(car.name);
+  }
+  console.log(obj1.age);
+  console.log(obj1.obj2.car3);
 
-    //this
-    const person = {
-        firstName: "John",
-        lastName: "Doe",
-        id: 5566,
-        fullName: function () {
-            return this.firstName + " " + this.lastName;
-        }
-    };
-    console.log(person.fullName);  
-    
-    //
-    // Create an Object
-const personn = {
-  name: "John",
-  age: 30,
-  city: "New York"
-};
+  
+  
+  
 
 
-let text = "";
-for (let x in personn) {
-  text += personn[x] + " ";
-};
 
 
-    
+
+
+
 
 </script>
