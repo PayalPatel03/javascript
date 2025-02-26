@@ -1,0 +1,39 @@
+<script>
+    let car = {
+        name: 'Harrier',
+        colour: 'Black',
+        model: '500'
+    }
+    console.log(car.model);
+    console.log(car.colour);
+    console.log(car.name);
+
+    //this
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName: function () {
+            return this.firstName + " " + this.lastName;
+        }
+    };
+    console.log(person.fullName);  
+    
+    //
+    // Create an Object
+const personn = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+
+let text = "";
+for (let x in personn) {
+  text += personn[x] + " ";
+};
+
+
+    
+
+</script>
