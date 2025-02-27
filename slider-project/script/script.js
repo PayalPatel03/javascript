@@ -1,16 +1,25 @@
-let slideIndex=0;
-let slideItem=document.querySelectorAll('.slider-item');
-console.log(slideItem[0]);
+let slideIndex = 1;
 
-let currSlide=(n)=>{
-    displaySlide(slideIndex+=n);
+let currSlide = (n) => {
+    displaySlide((slideIndex += n));
+};
+
+let displaySlide = (n) => {
+    let slideItem = document.querySelectorAll(".slider-item");
+    console.log(n);
     console.log(slideIndex);
-    
-}
 
-let displaySlide=(slideIndex)=>{
-    for(let i=0;i<slideItem.length;i++){
-        slideItem[i].classList.remove('active');
+    if (n > slideItem.length) {
+        slideIndex = 1;
     }
-    slideItem[slideIndex].classList.add('active');
-}
+    if (n < 1) {
+        slideIndex = slideItem.length;
+    }
+
+    for (let i = 0; i < slideItem.length; i++) {
+        slideItem[i].classList.remove("active");
+    }
+    slideItem[slideIndex - 1].classList.add("active");
+};
+
+displaySlide(slideIndex);
