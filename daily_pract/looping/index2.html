@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f3f3f3;
+        }
+
+        .slider {
+            width: 800px;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slider-item {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slider-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .active {
+            opacity: 1;
+        }
+
+        .next, .prev {
+            cursor: pointer;
+            padding: 10px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 20px;
+            z-index: 10;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slider">
+        <div class="slider-item active"><img src="/slider-project/images/img1.jpeg" alt="Slide 1"></div>
+        <div class="slider-item"><img src="/slider-project/images/img2.jpeg" alt="Slide 2"></div>
+        <div class="slider-item"><img src="https://via.placeholder.com/800x400/7fff7f/333333?text=Slide+3" alt="Slide 3"></div>
+
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll('.slider-item');
+
+        function changeSlide(n) {
+            slideIndex += n;
+
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            } else if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+
+            updateSlides();
+        }
+
+        function updateSlides() {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[slideIndex].classList.add('active');
+        }
+
+        // Auto-slide every 3 seconds
+        setInterval(() => changeSlide(1), 3000);
+    </script>
+
+</body>
+</html>
