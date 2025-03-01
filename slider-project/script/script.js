@@ -30,6 +30,6 @@ let displaySlide = (n) => {
 
 displaySlide(slideIndex);
 
-// setInterval(() => {
-//     currSlide(1);
-// }, 3000);
+setInterval(() => {
+    currSlide(1);
+}, 2000);
