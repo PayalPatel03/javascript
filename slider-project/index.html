@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -17,8 +18,18 @@
         <div class="slider-item d-none fade">
             <img src="./images/img5.webp" alt="image3">
         </div>
-        <button onclick="currSlide(-1)" class="prev">Prev</button>
-        <button onclick="currSlide(1)" class="next">Next</button>
+        <button onclick="currSlide(-1)" class="prev"><i class="fa-solid fa-less-than"></i></button>
+        <button onclick="currSlide(1)" class="next"><i class="fa-solid fa-greater-than"></i></button>
+
+        <div class="indicator">
+            <span id="current-slide">1</span> / <span id="total-slide">3</span>
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+       
     </div>
     
 
