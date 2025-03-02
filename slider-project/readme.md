@@ -13,6 +13,7 @@ This project is a simple and elegant image slider that cycles through multiple i
 - **Smooth Animations**: Fade-in effects enhance visual appeal.
 - **Responsive Design**: Adapts well to different screen sizes.
 
+
 ## Technologies Used
 - HTML
 - CSS
