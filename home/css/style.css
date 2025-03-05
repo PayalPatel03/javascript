@@ -41,6 +41,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .feature-img {
@@ -86,4 +87,10 @@
     margin-top: 5px;
     font-size: 1rem;
     font-weight: lighter;
+}
+.container{
+    
+        background: url('//home/images/img7.png') no-repeat center center/cover;
+        padding: 50px 0;
+    
 }
