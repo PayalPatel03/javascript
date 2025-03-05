@@ -50,31 +50,23 @@
                     </div>
                     <!--hobby-->
                     <div class="mb-3">
-                        <!--1-->
-                        <label for="hobby" class="form-label ">Hobby</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input ms-3" type="checkbox" value="" id="hobby1">
-                            <label class="form-check-label" for="hobby1">
-                              Dancing
-                            </label>
-                          </div>
-                          <!--2-->
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="hobby" type="checkbox" value="" id="hobby2" >
-                            <label class="form-check-label" for="hobby2">
-                              Singing
-                            </label>
-                          </div>
-                          <!--3-->
-                          <div class="form-check form-check-inline">
-                            <input class="form-check-input" name="hobby" type="checkbox" value="" id="hobby3" >
-                            <label class="form-check-label" for="hobby3">
-                              Yoga
-                            </label>
-                          </div>
-                          <span class="d-none hobbyError text-danger">Hobby is required.</span>
-                    </div>
+                        <label class="form-label">Hobby</label>
 
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="hobby1">Cooking</label>
+                            <input class="form-check-input ms-3"  name="hobby" type="checkbox" value="" id="hobby1">
+                        </div> 
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="hobby2">Dancing</label>
+                            <input class="form-check-input"  name="hobby" type="checkbox" value="" id="hobby2">
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label" for="hobby3">Yoga</label>
+                            <input class="form-check-input"  name="hobby" type="checkbox" value="" id="hobby3">
+                        </div>
+                        <span class="d-none hobbyError text-danger"> Hobby is required</span>
+
+                    </div>
                     <button class="btn btn-primary">Submit</button>
                 </form>
             </div>
@@ -126,11 +118,13 @@
                 document.querySelector('.genderError').classList.add('d-none');
             }
             //hobby
-            if(!hobby[0].checked && !hobby[1].checked){
-                document.querySelector('hobbyError').classList.remove('d-none');
+            if (!hobby[0].checked && !hobby[1].checked) {
+                document.querySelector('.hobbyError').classList.remove('d-none')
+
             }
-            else{
-                document.querySelector('.hobbyError').classList.add('d-none');
+            else {
+                document.querySelector('.hobbyError').classList.add('d-none')
+
             }
 
 
