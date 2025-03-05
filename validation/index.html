@@ -9,70 +9,95 @@
 </head>
 
 <body>
-   <div class="container">
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-6">
-            <form action="" method="post" onsubmit=" validate(); return false">
-                <h2>Sign-Up</h2>
-                <!--name-->
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username">
-                    <span class="d-none userError text-danger">Username is required.</span>
-                </div>
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <form action="" method="post" onsubmit=" validate(); return false">
+                    <h2>Sign-Up</h2>
+                    <!--name-->
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username">
+                        <span class="d-none userError text-danger">Username is required.</span>
+                    </div>
 
-                <!--email-->
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" id="email">
-                    <span class="d-none emailError text-danger">Email is required.</span>
-                </div>
+                    <!--email-->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" class="form-control" id="email">
+                        <span class="d-none emailError text-danger">Email is required.</span>
+                    </div>
 
-                <!--password-->
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password">
-                    <span class="d-none passwordError text-danger">password is required.</span>
-                </div>
+                    <!--password-->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password">
+                        <span class="d-none passwordError text-danger">password is required.</span>
+                    </div>
 
-                <!--gender-->
-                
-                <button class="btn btn-primary">Submit</button>
-            </form>
+                    <!--gender-->
+                    <div class="mb-3 ">
+                        <label for="gender" class="form-label ">Gender</label>
+                        <div class="form-check form-check-inline">
+                            <label for="gender1" class="form-check-label">Male</label>
+                            <input type="radio" name="gender" id="gender1" class=" ms-3 form-check-input">
+                            
+
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <label for="gender2" class="form-check-label">Female</label>
+                            <input type="radio" name="gender" id="gender2" class="form-check-input">
+                            <span class="d-none genderError text-danger">Gender is required.</span>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
-   </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        let username=document.getElementById('username');
-        let email=document.getElementById('email');
-        let password=document.getElementById('password');
+        let username = document.getElementById('username');
+        let email = document.getElementById('email');
+        let password = document.getElementById('password');
+        let gender=document.querySelector("input[name='gender']");
 
-        let validate=()=>{
+        let validate = () => {
             // console.log(email.value);
+            console.log(gender.checked[0]);
             
+
             //username
-            if(username.value.trim()===""){
+            if (username.value.trim() === "") {
                 document.querySelector('.userError').classList.remove('d-none');
             }
-            else{
+            else {
                 document.querySelector('.userError').classList.add('d-none');
             }
 
             //email
-            if(email.value.trim()===""){
+            if (email.value.trim() === "") {
                 document.querySelector('.emailError').classList.remove('d-none');
             }
-            else{
+            else {
                 document.querySelector('.emailError').classList.add('d-none');
             }
 
             //password
-            if(password.value.trim()===""){
+            if (password.value.trim() === "") {
                 document.querySelector('.passwordError').classList.remove('d-none');
             }
-            else{
+            else {
                 document.querySelector('.passwordError').classList.add('d-none');
+            }
+
+            //gender
+            if(!gender[0].checked || !gender[1].checked){
+                document.querySelector('.genderError').classList.remove('d-none');
+            }
+            else{
+                document.querySelector('.genderError').classList.add('d-none');
             }
 
         }
