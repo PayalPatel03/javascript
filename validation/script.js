@@ -3,6 +3,7 @@ let email = document.getElementById('email');
 let password = document.getElementById('password');
 let gender=document.querySelectorAll("input[name='gender']");
 let hobby=document.querySelectorAll("input[name='hobby']");
+let dob = document.getElementById('dob');
 
 
 let validate = () => {
@@ -50,6 +51,13 @@ let validate = () => {
 
     }
     //date
+    if(dob.value.trim===""){
+        document.querySelector('.dobError').classList.remove('d-none')
+
+    }
+    else{
+        document.querySelector('.dobError').classList.add('d-none')
+    }
 
 
 }
