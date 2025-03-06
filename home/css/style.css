@@ -37,6 +37,7 @@
 /*CAROUSEL ENDS*/
 
 /*FEATURE STARTS*/
+
 .feature-card {
     position: relative;
     overflow: hidden;
@@ -88,9 +89,52 @@
     font-size: 1rem;
     font-weight: lighter;
 }
+
 .container{
+    height: 700px;
+}
+/*part-2*/
+.dream {
+    padding: 50px 0;
     
-        background: url('//home/images/img7.png') no-repeat center center/cover;
-        padding: 50px 0;
-    
+}
+
+
+.dream .row {
+    align-items: center;
+}
+
+.dream h2 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.dream p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 20px;
+}
+
+.btn-uccess {
+    transition: background 0.3s, transform 0.3s;
+    margin-left: 400px ;
+    border: 5px solid #28a745;
+}
+
+.btn-uccess:hover {
+    background-color: #228B22;
+    transform: scale(1.1);
+    color: white;
+}
+
+.dream img {
+    width: 100%;
+    height: 400px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.dream img:hover {
+    transform: scale(1.05);
 }
