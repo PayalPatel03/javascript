@@ -16,33 +16,51 @@
                 <input type="text" class="form-control text-end mb-2" id="display" readonly>
 
                 <div class="row row-cols-4 g-2">
-                    <div class="col"><button class="btn btn-primary w-100 btn-rounded">AC</button></div>
-                    <div class="col"><button class="btn btn-primary w-100">%</button></div>
-                    <div class="col"><button class="btn btn-primary w-100">/</button></div>
-                    <div class="col"><button class="btn btn-primary w-100">*</button></div>
-
-                    <div class="col"><button class="btn btn-primary w-100">7</button></div>
+                    <div class="col"><button class="btn btn-primary w-100 btn-rounded">7</button></div>
                     <div class="col"><button class="btn btn-primary w-100">8</button></div>
                     <div class="col"><button class="btn btn-primary w-100">9</button></div>
-                    <div class="col"><button class="btn btn-primary w-100">+</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">C</button></div>
 
                     <div class="col"><button class="btn btn-primary w-100">4</button></div>
                     <div class="col"><button class="btn btn-primary w-100">5</button></div>
                     <div class="col"><button class="btn btn-primary w-100">6</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">+</button></div>
+
+                    <div class="col"><button class="btn btn-primary w-100">3</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">2</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">1</button></div>
                     <div class="col"><button class="btn btn-primary w-100">-</button></div>
 
-                    <div class="col"><button class="btn btn-primary w-100">1</button></div>
-                    <div class="col"><button class="btn btn-primary w-100">2</button></div>
-                    <div class="col"><button class="btn btn-primary w-100">3</button></div>
-
-                    <div class="col col-6"><button class="btn btn-primary w-100">0</button></div>
-                    <div class="col"><button class="btn btn-primary w-100">.</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">0</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">*</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">/</button></div>
+                    <div class="col"><button class="btn btn-primary w-100">=</button></div>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let buttons=document.querySelectorAll('button');
+        let array=['+','-','*','/'];
+        let display=document.querySelector('#display');
+
+        buttons.forEach((button)=>{
+            button.addEventListener('click',(e)=>{
+                let value=e.target.innerText;
+                if(value=='='){
+                    display.value=eval(display.value);
+                }
+                else if(value=='C'){
+                    display.value='';
+                }
+                else{
+                    display.value+=value;
+                }
+            })
+        })
+    </script>
 </body>
 
 </html>
