@@ -20,3 +20,6 @@ body{
      background-color: rgb(211, 211, 211) ; 
      
 }
+button{
+    border-radius: 50%;
+}

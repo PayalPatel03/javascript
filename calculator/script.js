@@ -5,9 +5,11 @@ let display=document.querySelector('#display');
 buttons.forEach((button)=>{
     button.addEventListener('click',(e)=>{
         let value=e.target.innerText;
-        let displayValue=display.innerText;
-        let last=displayValue[displayValue.length-1];
-        let removeLastStr=displayValue.slice(0,-1);
+        let displayValue=display.value;
+        let last=displayValue.slice(-1);
+        let removeLastStr=display.value.slice(0,-1);
+        // console.log(last);
+        
         // console.log(removeLastStr);
         
 
@@ -18,11 +20,12 @@ buttons.forEach((button)=>{
             display.value='';
         }
         else if(array.includes(value)){
-            if(last== value){
+            if(last == value){
                 display.value=display.value;
             }
             else{
                 if(array.includes(last)){
+                    console.log(removeLastStr);                
                     display.value=removeLastStr+value;
                 }
                 else{
