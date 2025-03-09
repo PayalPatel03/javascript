@@ -14,7 +14,13 @@ buttons.forEach((button)=>{
         
 
         if(value=='='){
-            display.value=eval(display.value);
+            
+            try {
+                display.value=eval(display.value);
+            } catch (error) {
+                display.value='';
+                
+            }
         }
         else if(value=='C'){
             display.value='';
