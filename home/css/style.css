@@ -21,7 +21,7 @@
     left: 0;
     width: 100%;
     height: 3px;
-    background-color: green;
+    background-color: #95c425;
 }
 
 /*HEADER END*/
@@ -119,11 +119,11 @@
 .btn-uccess {
     transition: background 0.3s, transform 0.3s;
     margin-left: 400px ;
-    border: 5px solid #28a745;
+    border: 5px solid #95c425;
 }
 
 .btn-uccess:hover {
-    background-color: #228B22;
+    background-color: #95c425;
     transform: scale(1.1);
     color: white;
 }
