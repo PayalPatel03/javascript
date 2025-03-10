@@ -1,30 +1,55 @@
 <script>
     //Polymorphism :Many forms 
-    class Music{
-        sound(){
-            console.log("Melody, Harmony, and Rhythm,");
-        }
-    }
+    // class Music{
+    //     sound(){
+    //         console.log("Melody, Harmony, and Rhythm,");
+    //     }
+    // }
 
-    class Piano extends Music{
-        sound(){
-            console.log("For Paino: "+"Hammers which strike the string, the strings that vibrate, and the soundboard that vibrates");
-        }
-    }
+    // class Piano extends Music{
+    //     sound(){
+    //         console.log("For Paino");
+    //     }
+    // }
 
-    class Tabla extends Music{
-        sound(){
-            console.log("For Tabla: "+"Ringing bell-like tones to throbbing, resonant bass strokes."); 
-        }
-    }
+    // class Tabla extends Music{
+    //     sound(){
+    //         console.log("For Tabla "); 
+    //     }
+    // }
     
-    class Flute extends Music{
-        sound(){
-            console.log("For Flute: "+"Mellow, light, wafting, bright and rich");
+    // class Flute extends Music{
+    //     sound(){
+    //         console.log("For Flute");
+    //     }
+    // }
+
+    // let sweetSound=[new Piano(),new Flute(),new Tabla()];
+    // sweetSound.forEach(Music=>Music.sound());
+
+
+    class Dsa{
+        topics(){
+            console.log("Welcome to Data Structures..");
+        }
+    }
+    class Stack{
+        topics(){
+            console.log("LIFO & FIFIO");
+        }
+    }
+    class Queue{
+        topics(){
+            console.log("Enqueue & Dequeue");
+        }
+    }
+    class Array{
+        topics(){
+            console.log("1D and 2D");
         }
     }
 
-    let sweetSound=[new Piano(),new Flute(),new Tabla()];
-    sweetSound.forEach(Music=>Music.sound());
+    let types=[new Dsa(),new Stack(),new Queue(),new Array()];
+    types.forEach(Dsa=>Dsa.topics());
 
 </script>
