@@ -185,8 +185,9 @@
     }
 } */
 /*feature ends*/
+/*dvlop stat*/
 
-/*devloping starts*/
+
 .devlop {
     margin-top: 100px;
     font-weight: bold;
@@ -194,39 +195,78 @@
 
 .devlop h2 {
     font-size: 3.5rem;
+    font-weight: bold;
+    color: #333;
 }
 
-.devlop-img {
-    height: 300px;
-    width: 200px;
+.devlop-img img {
+    height: auto;
+    width: 100%;
+    max-width: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.devlop-work {
+    margin-top: 20px;
 }
 
 .devlop-work figcaption {
     margin-bottom: 5px;
+    font-size: 1.2rem;
+    color: #555;
 }
 
 .blockquote-footer cite {
-    font-size: 2 em !important;
+    font-size: 1.2em !important;
+    font-weight: bold;
 }
 
 .devlop-work h4 {
-    display: inline-block;
     margin-right: 10px;
-    font-size: 1.5 rem;
+    font-size: 1.5rem;
 }
 
 .devlop-work button {
-    display: inline-block;
     background-color: #28a745;
-    /* Green color */
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    transition: background 0.3s ease-in-out;
 }
 
 .devlop-work button:hover {
     background-color: #218838;
 }
+
+/* Responsive Design
+@media (max-width: 768px) {
+    .devlop h2 {
+        font-size: 2.5rem;
+    }
+
+    .devlop-img img {
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .devlop h2 {
+        font-size: 2rem;
+    }
+
+    .devlop-img img {
+        max-width: 200px;
+    }
+
+    .devlop-work h4 {
+        font-size: 1.2rem;
+    }
+
+    .devlop-work button {
+        padding: 5px 10px;
+    }
+} */
