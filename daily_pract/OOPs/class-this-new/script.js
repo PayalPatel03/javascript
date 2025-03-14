@@ -13,6 +13,8 @@ class Student {
         this.grade = grade;
         this.course = course;
         this.subCourse = subCourse;
+
+        
     }
 
     getData() {
