@@ -5,6 +5,8 @@ class Student {
         this.grade = grade;
         this.course = course;
         this.subCourse = subCourse;
+
+        
     }
 
     setData(userName, age, grade, course, subCourse) {
