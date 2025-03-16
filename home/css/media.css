@@ -1,0 +1,68 @@
+/* Mobile devices (up to 480px) */
+@media (max-width: 480px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .carousel-inner .carousel-item img {
+        height: 300px;
+    }
+
+    .feature h2, .devlop h2 {
+        font-size: 2rem;
+    }
+
+    .feature-card .overlay h4 {
+        font-size: 1.2rem;
+    }
+
+    .opacity-content {
+        font-size: 1rem;
+        max-width: 95%;
+    }
+
+    .devlop-work h4 {
+        font-size: 1rem;
+    }
+
+    .devlop-work button {
+        padding: 5px 8px;
+    }
+}
+
+/* Tablets (481px to 768px) */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .carousel-inner .carousel-item img {
+        height: 400px;
+    }
+
+    .feature h2, .devlop h2 {
+        font-size: 2.5rem;
+    }
+
+    .devlop-img img {
+        max-width: 250px;
+    }
+}
+
+/* Small Laptops (769px to 1024px) */
+@media (max-width: 1024px) {
+    .feature h2, .devlop h2 {
+        font-size: 3rem;
+    }
+
+    .carousel-inner .carousel-item img {
+        height: 500px;
+    }
+}
+
+/* Large Screens (1025px and above) */
+@media (min-width: 1025px) {
+    .carousel-inner .carousel-item img {
+        height: 600px;
+    }
+}
