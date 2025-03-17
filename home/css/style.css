@@ -5,24 +5,27 @@
 }
 
 /*HEADER STARTS*/
-.nav-item .nav-link:hover {
-    color: #000000 !important;
-}
-
-.navbar-nav .nav-item .nav-link.active {
+.navbar-nav .nav-item .nav-link {
     position: relative;
     font-weight: bold;
 }
 
-.navbar-nav .nav-item .nav-link.active::before {
+.navbar-nav .nav-item .nav-link::before {
     content: "";
     position: absolute;
-    top: 35px;
+    bottom: -5px; /* Adjusted for proper positioning */
     left: 0;
-    width: 100%;
+    width: 0;
     height: 3px;
     background-color: #95c425;
+    transition: width 0.3s ease-in-out;
 }
+
+.navbar-nav .nav-item .nav-link:hover::before,
+.navbar-nav .nav-item .nav-link.active::before {
+    width: 100%;
+}
+
 
 /*HEADER END*/
 
