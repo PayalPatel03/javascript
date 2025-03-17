@@ -13,7 +13,7 @@
 .navbar-nav .nav-item .nav-link::before {
     content: "";
     position: absolute;
-    bottom: -5px; /* Adjusted for proper positioning */
+    bottom: -5px; 
     left: 0;
     width: 0;
     height: 3px;
@@ -393,4 +393,35 @@
 
 .gal-main h3 {
     font-size: 50px;
+}
+.marquee {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+}
+
+.marquee-content {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 3s linear infinite;
+}
+
+.marquee-content a {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+.all-img img{
+    height: 500px;
+    width: 250px;
+    object-fit: cover;
 }
