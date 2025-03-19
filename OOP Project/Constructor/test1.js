@@ -11,22 +11,22 @@
 // obj.print();
 
 //PATAMERTISED CONSTRUCTOR
-// class Demo{
-//     constructor(shape,color){
-//         this.shape=shape;
-//         this.color=this.color;
-//     }
-//     set(shape,color){
-//         this.shape=shape;
-//         this.color=this.color;
-//     }
-//     get(){
-//         console.log("Shape: "+this.shape);
-//         console.log("Colour: "+this.color);
-//     }
-// }
-// let obj=new Demo("circle","Purple");
-// obj.get();
+class Demo{
+    constructor(shape,color){
+        this.shape=shape;
+        this.color=color;
+    }
+    set(shape,color){
+        this.shape=shape;
+        this.color=color;
+    }
+    get(){
+        console.log("Shape: "+this.shape);
+        console.log("Colour: "+this.color);
+    }
+}
+let obj=new Demo("circle","Purple");
+obj.get();
 
 //COPY CONSTUCCTOR
 // class Info {
