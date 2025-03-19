@@ -34,4 +34,5 @@ class Salary extends Employee {
 
 
 let sal = new Salary("Bheem", 19, 60000, 3500, 2000, 4500);
+
 sal.getSal();
