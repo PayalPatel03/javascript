@@ -21,6 +21,8 @@
 // let obj1 = new Purple();
 // obj1.print();
 
+
+
 class Employee {
     constructor(name, age, salary) {
         this.E_name = name;
