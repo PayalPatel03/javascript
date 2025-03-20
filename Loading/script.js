@@ -1,5 +1,6 @@
 window.onload=function(){
     setTimeout(()=>{
         document.querySelector(".loader").style.display="none";
-    },2000);
+        document.querySelector(".content").style.display="block";
+    },3000);
 }
