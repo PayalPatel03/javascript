@@ -17,42 +17,21 @@
     <div class="container">
         <div class="row justify-content-center mt-4">
             <div class="col-md-4">
-                <div class="timer bg-secondary p-3">
+                <div class="timer bg-secondary p-3 text-center fw-bold fs-5">
                     00:<span id="time">60</span>
                 </div>
-                <button onclick="startTimer()" class="btn btn-primary mt-2" id="start-btn">Start</button>
-                <button onclick="stopTimer()" class="btn btn-primary mt-2" id="stop-btn">Stop</button>
-                <button onclick="resetTimer()" class="btn btn-primary mt-2" id="reset-btn">Reset</button>
+               
+                <button onclick="startTimer()" class="btn btn-primary mt-2 w-25" id="start-btn">Start</button>
+                <button onclick="stopTimer()" class="btn btn-primary mt-2 w-25" id="stop-btn">Stop</button>
+                <button onclick="resetTimer()" class="btn btn-primary mt-2 w-25" id="reset-btn">Reset</button>
+               
             </div>
+
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        let time = document.getElementById('time').textContent;
-        let id;
-
-        let startTimer = () => {
-            id = setInterval(() => {
-                if (time == 0) {
-                    clearInterval(id);
-                    return;
-                }
-                time--;
-                document.getElementById('time').textContent = time > 9 ? time : '0' + time;
-            }, 1000);
-        }
-
-        let stopTimer = () => {
-            clearInterval(id);
-        }
-
-        let resetTimer = () => {
-            clearInterval(id);
-            time = 60;
-            document.getElementById('time').textContent = time;
-        };
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>
