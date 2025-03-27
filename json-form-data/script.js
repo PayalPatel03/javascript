@@ -5,7 +5,6 @@ let form = document.getElementById("form");
 let data = document.querySelector("#table tbody");
 let update=document.getElementById('updt');
 let edit=-1;
-
 let users = [];
 username.focus();
 form.addEventListener('submit', (event) => {
@@ -19,6 +18,12 @@ form.addEventListener('submit', (event) => {
         users.push(obj);
     }
     else{
+        users[edit] = obj;
+        edit = -1; 
+
+        update.innerText = "Submit";
+        update.classList.remove('btn-primary');
+        update.classList.add('btn-info');
         
     }
     username.value = " ";
@@ -43,7 +48,6 @@ let display = () => {
             <button class="btn btn-warning" onclick="editData(${index})">Edit</button>
              </td>
             `
-
         data.append(row);
 
     })
@@ -64,10 +68,6 @@ let display = () => {
         update.innerText="Update";
         update.classList.remove('btn-info');
         update.classList.add('btn-primary');
-
-        
-       
-       
-
+        edit=index;
     }
 display();
