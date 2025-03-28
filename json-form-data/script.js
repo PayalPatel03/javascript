@@ -59,6 +59,7 @@ let display = () => {
     }
 
     let editData=(index)=>{
+        username.focus();
         let user = users.filter((_,idx)=>idx==index)[0];
 
         username.value=user.username;
