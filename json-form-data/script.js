@@ -38,6 +38,7 @@ let display = () => {
         let row = document.createElement('tr');
 
         row.innerHTML =
+        
             `
             <td>${index + 1}</td>
             <td>${obj.username}</td>
