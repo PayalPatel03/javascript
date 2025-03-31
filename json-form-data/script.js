@@ -6,9 +6,7 @@ let data = document.querySelector("#table tbody");
 let update = document.getElementById('updt');
 let gender = document.querySelectorAll("input[type='radio']");
 let hobby = document.querySelectorAll("input[type='checkbox']");
-
-console.log(city);
-
+let user=JSON.parse(localStorage.getItem("users")) || [];
 
 let edit = -1;
 let users = [];
@@ -54,6 +52,7 @@ form.addEventListener('submit', (event) => {
         update.classList.add('btn-info');
 
     }
+    localStorage.setItem("users",JSON.stringify(users));
     username.value = " ";
     email.value = " ";
     password.value = " ";
@@ -77,9 +76,19 @@ let display = () => {
             <td>${obj.gender}</td>
             <td>======</td>
             <td>
-            <button class="btn btn-danger" onclick="deleteData(${index})">Delete</button>
-            <button class="btn btn-warning" onclick="editData(${index})">Edit</button>
+         
+        <button class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" onclick="deleteData(${index})" >
+
+        <i class="fas fa-trash-alt"></i> 
+        </button>
+
+        <button class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" onclick="editData(${index})">
+        <i class="fas fa-edit"></i> 
+        
+        </button>
+
              </td>
+
             `
         data.append(row);
 
@@ -88,6 +97,8 @@ let display = () => {
 
 let deleteData = (index) => {
     users.splice(index, 1);
+    localStorage.setItem("users",JSON.stringify(users));
+
     display();
 }
 
