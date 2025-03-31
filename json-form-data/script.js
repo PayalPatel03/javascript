@@ -4,15 +4,22 @@ let password = document.getElementById("password");
 let form = document.getElementById("form");
 let data = document.querySelector("#table tbody");
 let update=document.getElementById('updt');
+let gender=document.querySelectorAll("input[name='gender']")
+let hobby=document.querySelectorAll("input[name='hobby']")
+
 let edit=-1;
 let users = [];
 username.focus();
 form.addEventListener('submit', (event) => {
     event.preventDefault();
+    console.log(hobby);
+    
     let obj = {
         username: username.value,
         email: email.value,
         password: password.value,
+        gender:gender.checked,
+        hobby:hobby.value
     }
     if(edit==-1){
         users.push(obj);
@@ -29,6 +36,8 @@ form.addEventListener('submit', (event) => {
     username.value = " ";
     email.value = " ";
     password.value = " ";
+    gender.value = " ";
+    hobby.value = " ";
     username.focus();
     display();
 })
@@ -44,6 +53,11 @@ let display = () => {
             <td>${obj.username}</td>
             <td>${obj.email}</td>
             <td>${obj.password}</td>
+            
+            <td>${obj.hobby}</td>
+            <td>${obj.gender}</td>
+            <td>----</td>
+            
             <td>
             <button class="btn btn-danger" onclick="deleteData(${index})">Delete</button>
             <button class="btn btn-warning" onclick="editData(${index})">Edit</button>
