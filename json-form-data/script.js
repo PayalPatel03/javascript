@@ -4,22 +4,37 @@ let password = document.getElementById("password");
 let form = document.getElementById("form");
 let data = document.querySelector("#table tbody");
 let update=document.getElementById('updt');
-let gender=document.querySelectorAll("input[name='gender']")
-let hobby=document.querySelectorAll("input[name='hobby']")
+let gender=document.querySelectorAll("input[type='radio']")
+let hobby=document.querySelectorAll("input[type='checkbox']")
 
 let edit=-1;
 let users = [];
 username.focus();
 form.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log(hobby);
+    //gender
+    let genderValue='';
+    if(gender[0].checked){
+        genderValue=gender[0].value;
+    }
+    else{
+        genderValue=gender[1].value;
+    }
+   
+    //hobby
+    let hobbyArr=[];
+    for(let i=0;i<hobby.length;i++){
+        if(hobby[i].checked){
+            hobbyArr.push(hobby[i].value);
+        }
+    }
     
     let obj = {
         username: username.value,
         email: email.value,
         password: password.value,
-        gender:gender.checked,
-        hobby:hobby.value
+        gender:genderValue,
+        hobby:hobbyArr,
     }
     if(edit==-1){
         users.push(obj);
