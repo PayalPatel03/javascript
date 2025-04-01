@@ -20,17 +20,21 @@ form.addEventListener('submit', (event) => {
     let genderValue = '';
     if (gender[0].checked) {
         genderValue = gender[0].value;
+        gender[0].checked=false;
     }
     else {
         genderValue = gender[1].value;
+        gender[1].checked=false;
     }
 
     //hobby
     let hobbyArr = [];
     for (let i = 0; i < hobby.length; i++) {
         if (hobby[i].checked) {
-            hobbyArr.push(hobby[i].value)
+            hobbyArr.push(hobby[i].value);
+            hobby[0].checked=false;
         }
+        
     }
 
     //city
