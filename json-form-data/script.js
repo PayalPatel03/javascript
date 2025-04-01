@@ -6,11 +6,11 @@ let data = document.querySelector("#table tbody");
 let update = document.getElementById('updt');
 let gender = document.querySelectorAll("input[type='radio']");
 let hobby = document.querySelectorAll("input[type='checkbox']");
-let user=JSON.parse(localStorage.getItem("users")) || [];
+let users=JSON.parse(localStorage.getItem("users")) || [];
 let city=document.getElementById("city");
 
 let edit = -1;
-let users = [];
+
 username.focus();
 form.addEventListener('submit', (event) => {
     event.preventDefault();
