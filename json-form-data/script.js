@@ -34,7 +34,12 @@ form.addEventListener('submit', (event) => {
             hobbyArr.push(hobby[i].value);
             hobby[0].checked=false;
         }
-        
+        if(hobby[0].checked){
+            hobby[0].checked=false;
+        }
+        else{
+            hobby[1].checked=false; 
+        }
     }
 
     //city
