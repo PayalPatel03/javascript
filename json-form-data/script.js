@@ -34,7 +34,7 @@ form.addEventListener('submit', (event) => {
             hobbyArr.push(hobby[i].value);
             hobby[0].checked=false;
         }
-        if(hobby[0].checked){
+       else if(hobby[0].checked){
             hobby[0].checked=false;
         }
         else{
@@ -78,8 +78,6 @@ form.addEventListener('submit', (event) => {
     username.value = " ";
     email.value = " ";
     password.value = " ";
-    gender.value = " ";
-    hobby.value = " ";
     username.focus();
     display();
 })
