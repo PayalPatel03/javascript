@@ -7,6 +7,7 @@ let update = document.getElementById('updt');
 let gender = document.querySelectorAll("input[type='radio']");
 let hobby = document.querySelectorAll("input[type='checkbox']");
 let user=JSON.parse(localStorage.getItem("users")) || [];
+let city=document.getElementById("city");
 
 let edit = -1;
 let users = [];
@@ -32,12 +33,24 @@ form.addEventListener('submit', (event) => {
         }
     }
 
+    //city
+    let cityValue = [];
+
+    for (let i = 0; i < city.length; i++) {
+
+      if (city[i].selected) {
+        cityValue.push(city[i].value);
+
+      }
+    }    
+
     let obj = {
         username: username.value,
         email: email.value,
         password: password.value,
         gender: genderValue,
         hobby: hobbyArr,
+        city: cityValue
 
     }
     if (edit == -1) {
@@ -74,7 +87,7 @@ let display = () => {
             <td>${obj.password}</td>
             <td>${obj.hobby.toString()}</td>  
             <td>${obj.gender}</td>
-            <td>======</td>
+            <td>${obj.city}</td>
             <td>
          
         <button class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" onclick="deleteData(${index})" >
