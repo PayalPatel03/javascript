@@ -36,7 +36,7 @@ const display=()=>{
             <td>${product.p_name}</td>
             <td>${product.price}</td>
             <td>
-                <button onClick="addToCart(${product})" class="btn btn-primary">Add to Cart</button>
+                <button onClick="addToCart(${index})" class="btn btn-primary">Add to Cart</button>
             </td>
             `
         
