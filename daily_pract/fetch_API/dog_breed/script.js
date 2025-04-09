@@ -19,5 +19,16 @@ fetch('https://dog.ceo/api/breeds/list/all')
 })
 
 const display=()=>{
-    
+    let breedSelect=document.getElementById('breeds').value;
+    fetch(`https://dog.ceo/api/breed/${breedSelect}/images/random`)
+    .then((response)=>{
+        return response.json();
+    })
+    .then((data)=>{
+        img.src=data.message;
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+
 }
