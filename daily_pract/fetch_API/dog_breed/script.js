@@ -19,7 +19,7 @@ fetch('https://dog.ceo/api/breeds/list/all')
 })
 
 const display=()=>{
-    let breedSelect=document.getElementById('breeds').value;
+    let breedSelect=breeds.value;
     fetch(`https://dog.ceo/api/breed/${breedSelect}/images/random`)
     .then((response)=>{
         return response.json();
