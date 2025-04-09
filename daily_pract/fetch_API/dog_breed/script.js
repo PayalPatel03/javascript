@@ -13,10 +13,11 @@ fetch('https://dog.ceo/api/breeds/list/all')
         option.innerText=breed;
         breeds.append(option);
     })
-    
-
 })
 .catch((error)=>{
-    console.log(error);
-    
+    console.log(error); 
 })
+
+const display=()=>{
+    
+}
