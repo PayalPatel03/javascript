@@ -6,9 +6,7 @@ async function fetchProducts() {
     const products = await response.json();
     displayProducts(products);
   } catch (error) {
-    console.error('Fetch error:', error);
-    document.getElementById('product-list').innerHTML =
-      '<div class="alert alert-danger">Failed to load products.</div>';
+    console.log(error);
   }
 }
 
@@ -27,7 +25,7 @@ function displayProducts(products) {
           <h5 class="card-title">${product.title}</h5>
           <p class="card-text text-truncate">${product.description}</p>
           <div class="mt-auto">
-            <span class="badge bg-success">$${product.price}</span>
+             <span class="badge bg-success">$${product.price}</span>
           </div>
         </div>
       </div>
