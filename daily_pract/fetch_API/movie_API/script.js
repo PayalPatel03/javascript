@@ -1,6 +1,6 @@
-const API_KEY = '50bd72b0'; // Replace with your OMDb API key
+const API_KEY = '50bd72b0'; 
 let currentPage = 1;
-let currentQuery = 'avengers';
+let currentQuery = 'harry potter';
 
 const movieContainer = document.getElementById('movieContainer');
 const searchInput = document.getElementById('searchInput');
@@ -53,5 +53,4 @@ loadMoreBtn.addEventListener('click', () => {
   loadMovies();
 });
 
-// Initial load
 loadMovies();
