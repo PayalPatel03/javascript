@@ -1,46 +1,50 @@
+/* Global styling */
+body {
+  background-color: #fceee6; /* Soft nude */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  transition: background-color 0.5s ease;
+}
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 20px;
-  }
-  
-  #container{
-    border: 1px solid #000;
-    padding: 10px;
-  }
-  form{
-    margin-bottom: 20px;
-  }
-  
-  input,button{
-    margin: 5px;
-    padding: 10px;
-  }
-  
-  table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  table,th,td{
-    border: 1px solid #000;
-  }
-  
-  th,td{
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th{
-    background-color: #f4f4f4;
-  }
-  
-  .btn{
-    padding: 5px 10px;
-    margin: 2px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+/* Heading */
+h1 {
+  color: #b47b6e;
+  transition: color 0.3s ease;
+}
+
+/* Select box */
+.form-select {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-select:focus {
+  border-color: #d1a89d;
+  box-shadow: 0 0 0 0.2rem rgba(210, 160, 140, 0.25);
+}
+
+/* Card styling */
+#stats.card {
+  background-color: #fffaf7;
+  border: 1px solid #f5d9cc;
+  border-radius: 15px;
+  transition: all 0.4s ease;
+}
+
+/* Hover effect for card */
+#stats.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Stats text */
+#stats p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Country name heading */
+#countryName {
+  color: #b25f4e;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
