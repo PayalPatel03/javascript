@@ -1,7 +1,6 @@
 const API_KEY = '50bd72b0'; 
 let currentPage = 1;
 let currentQuery = 'harry potter';
-
 const movieContainer = document.getElementById('movieContainer');
 const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
