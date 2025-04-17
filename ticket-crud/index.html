@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ticket Booking System</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f9f9f9; }
+    h2 { color: #333; }
+    input, button { padding: 8px; margin: 5px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<h2>Ticket Booking System</h2>
+
+<form id="bookingForm">
+  <input type="hidden" id="editIndex" value="">
+  <input type="text" id="name" placeholder="Name" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="text" id="seat" placeholder="Seat No." required>
+  <button type="submit">Submit</button>
+</form>
+
+<table id="bookingTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Seat</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+  let bookings = [];
+
+  const form = document.getElementById('bookingForm');
+  const tableBody = document.querySelector('#bookingTable tbody');
+
+  // Load from localStorage on page load
+  window.onload = function () {
+    const storedBookings = localStorage.getItem('bookings');
+    if (storedBookings) {
+      bookings = JSON.parse(storedBookings);
+    }
+    renderTable();
+  };
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const seat = document.getElementById('seat').value.trim();
+    const editIndex = document.getElementById('editIndex').value;
+
+    if (editIndex === '') {
+      // Create
+      bookings.push({ name, email, seat });
+    } else {
+      // Update
+      bookings[editIndex] = { name, email, seat };
+      document.getElementById('editIndex').value = '';
+    }
+
+    form.reset();
+    updateStorage();
+    renderTable();
+  });
+
+  function renderTable() {
+    tableBody.innerHTML = '';
+    bookings.forEach((booking, index) => {
+      const row = `<tr>
+        <td>${booking.name}</td>
+        <td>${booking.email}</td>
+        <td>${booking.seat}</td>
+        <td>
+          <button onclick="editBooking(${index})">Edit</button>
+          <button onclick="deleteBooking(${index})">Delete</button>
+        </td>
+      </tr>`;
+      tableBody.innerHTML += row;
+    });
+  }
+
+  function editBooking(index) {
+    const booking = bookings[index];
+    document.getElementById('name').value = booking.name;
+    document.getElementById('email').value = booking.email;
+    document.getElementById('seat').value = booking.seat;
+    document.getElementById('editIndex').value = index;
+  }
+
+  function deleteBooking(index) {
+    bookings.splice(index, 1);
+    updateStorage();
+    renderTable();
+  }
+
+  function updateStorage() {
+    localStorage.setItem('bookings', JSON.stringify(bookings));
+  }
+</script>
+
+</body>
+</html>
