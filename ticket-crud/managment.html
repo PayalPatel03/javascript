@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h1 class="text-center mt-3">Management Contact Form</h1>
+                <form method="post" id="form">
+                    <div class="mb-3 fw-bold">
+                        <label for="username" class="form-label">User Name</label>
+                        <input type="text" name="username" id="username" class="form-control">
+                    </div>
+                    <div class="mb-3 fw-bold">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" name="email" id="email" class="form-control">
+                    </div>
+                    <div class="mb-3 fw-bold">
+                        <label for="password" class="form-label">Passowrd</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                    </div>
+                    <button id="updt" class="btn btn-info">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <table id="table" class="text-center table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Sr. No</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"></script>
+    <script>
+        let username = document.getElementById("username");
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+        let form = document.getElementById("form");
+        let data = document.querySelector("#table tbody");
+        let update = document.getElementById('updt');
+        let show = JSON.parse(localStorage.getItem("show")) || [];
+        let edit = -1;
+
+        username.focus();
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            let obj = {
+                username: username.value,
+                email: email.value,
+                password: password.value
+            }
+            if (edit == -1) {
+                show.push(obj);
+            }
+            else {
+                show[edit] = obj;
+                edit = -1;
+                update.innerText = "Submit";
+                update.classList.remove('btn-primary');
+                update.classList.add('btn-info');
+            }
+            localStorage.setItem("show", JSON.stringify(show));
+            username.value = " ";
+            email.value = " ";
+            password.value = " ";
+            username.focus();
+            display();
+        })
+        const display = () => {
+            data.innerHTML = '';
+            show.map((obj, index) => {
+                let row = document.createElement('tr');
+
+                row.innerHTML =
+                    `
+            <td>${index + 1}</td>
+            <td>${obj.username}</td>
+            <td>${obj.email}</td>
+            <td>${obj.password}</td>
+            <td>
+         
+        <button class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" onclick="deleteData(${index})" >
+
+        <i class="fas fa-trash-alt"></i> 
+        </button>
+
+        <button class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" onclick="editData(${index})">
+        <i class="fas fa-edit"></i> 
+        
+        </button>
+             </td>
+            `
+                data.append(row);
+            })
+        }
+        let deleteData = (index) => {
+            show.splice(index, 1);
+            localStorage.setItem("show", JSON.stringify(show));
+
+            display();
+        }
+
+        let editData = (index) => {
+            username.focus();
+            let user = show.filter((_, idx) => idx == index)[0];
+
+            username.value = user.username;
+            email.value = user.email;
+            password.value = user.password;
+
+            update.innerText = "Update";
+            update.classList.remove('btn-info');
+            update.classList.add('btn-primary');
+            edit = index;
+        }
+        display();
+    </script>
+</body>
+
+</html>
