@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #191919;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Navbar */
+.navbar {
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-brand img {
+  height: 35px;
+}
+
+.form-control::placeholder {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.nav-item {
+  font-size: 0.9rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+}
+
+#menuContent {
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+#menuContent.show {
+  max-height: 300px;
+  padding: 20px;
+}
+
+/* Carousel */
+.carousel-inner img {
+  height: 600px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .carousel-inner img {
+    height: 40vh;
+  }
+
+  .navbar .form-control {
+    width: 100px;
+  }
+
+  .navbar-nav {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-item {
+    font-size: 0.8rem;
+  }
+}
+.card {
+  background-color: #191919;
+}
+marquee img {
+  width: 300px;
+}
+
+.rating i {
+  color: #63e6be;
+  margin: 2px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.deal-card {
+  background-color: #1c1c1c; /* dark background */
+  padding: 15px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+.deal-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.deal-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  background-color: #2a2a2a;
+}
