@@ -5,6 +5,56 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+
+
+    /* Sidebar styles */
+    #sidebarMenu {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #1c1c1c;
+      color: white;
+      z-index: 1050;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+    }
+
+    #sidebarMenu.show {
+      left: 0;
+    }
+
+    #sidebarMenu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #sidebarMenu a:hover {
+      background-color: #2a2a2a;
+    }
+
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1040;
+      display: none;
+    }
+
+    .sidebar-overlay.show {
+      display: block;
+    }
+
+    .sidebar-close {
+      text-align: right;
+      padding: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
 /* Navbar */
 .navbar {
   transition: background-color 0.3s ease, padding 0.3s ease;
@@ -105,4 +155,25 @@ marquee img {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
   background-color: #2a2a2a;
+}
+
+.ee li a:hover{
+  color: #63e6be  !important;
+}
+.social-icons a .fa-youtube:hover{
+  color: red;
+}
+.social-icons a .fa-facebook:hover{
+  color: rgb(63, 63, 135);
+}
+
+.social-icons a .fa-twitter:hover{
+  color: rgb(63, 63, 135);
+}
+
+.social-icons a .fa-linkedin:hover{
+  color: rgb(63, 63, 135);
+}
+.social-icons a .fa-instagram:hover{
+  color: rgb(63, 63, 135);
 }

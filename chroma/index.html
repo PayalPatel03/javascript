@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Croma Header Clone</title>
+    <title>Croma</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -23,186 +23,182 @@
   </head>
   <body>
     <!-- Header Section -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black py-3 fixed-top">
-      <div class="container-fluid d-flex align-items-center">
-        <!-- Logo -->
-        <a class="navbar-brand me-5 ms-3" href="#">
-          <img
-            src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1637759004/Croma%20Assets/CMS/Category%20icon/Final%20icon/Croma_Logo_acrkvn.svg"
-            alt="Croma Logo"
-          />
-        </a>
-
-        <!-- Toggler Button + Menu Text -->
-        <div class="d-flex align-items-center me-4">
-          <button
-            class="btn btn-dark border-0 p-0 fs-4"
-            id="menuToggle"
-            type="button"
-          >
-            <i class="bi bi-list" id="menuIcon"></i>
-          </button>
-          <span class="text-white ms-2 fw-semibold fs-5">Menu</span>
-        </div>
-
-        <!-- Search Box -->
-        <form class="d-flex mx-auto w-50">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="What are you looking for ?"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-light" type="submit">
-            <i class="bi bi-search"></i>
-          </button>
-        </form>
-
-        <!-- Right Side Icons -->
-        <ul class="navbar-nav ms-auto d-flex align-items-center">
-          <li class="nav-item me-3 text-white">
-            <i class="bi bi-geo-alt fs-5"></i> Mumbai, 400049
-          </li>
-          <li class="nav-item me-3 text-white">
-            <i class="bi bi-person fs-5"></i>
-          </li>
-          <li class="nav-item text-white position-relative">
-            <i class="bi bi-cart fs-5"></i>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- Push content down because header is fixed -->
-    <div style="height: 50px"></div>
-
-    <!-- OUTSIDE MENU Section (hidden by default) -->
-    <div id="menuContent" class="bg-light shadow">
-      <ul class="list-unstyled mb-0">
-        <li>
-          <a href="#" class="text-dark text-decoration-none d-block py-2"
-            >Home</a
-          >
-        </li>
-        <li>
-          <a href="#" class="text-dark text-decoration-none d-block py-2"
-            >About</a
-          >
-        </li>
-        <li>
-          <a href="#" class="text-dark text-decoration-none d-block py-2"
-            >Contact</a
-          >
-        </li>
-      </ul>
+   <!-- Top Navbar -->
+  <nav class="navbar navbar-dark bg-black fixed-top px-3 py-2">
+    <a class="navbar-brand" href="#">
+      <img
+        src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1637759004/Croma%20Assets/CMS/Category%20icon/Final%20icon/Croma_Logo_acrkvn.svg"
+        alt="Croma Logo"
+        height="30"
+      />
+    </a>
+    <div class="d-flex align-items-center">
+      <button class="btn btn-dark border-0" id="openSidebar">
+        <i class="bi bi-list fs-3"></i>
+      </button>
+      <span class="text-white fw-semibold ms-2">Menu</span>
     </div>
+    <form class="d-flex mx-auto w-50">
+      <input class="form-control me-2" type="search" placeholder="What are you looking for ?" />
+      <button class="btn btn-outline-light" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+      </button>
+      
+      
+    </form>
+    <div class="d-flex align-items-center ms-auto">
+      <!-- Location -->
+      <div class="d-flex align-items-center text-white me-4">
+        <i class="bi bi-geo-alt fs-5 me-1"></i>
+        <span>Mumbai, 400049</span>
+      </div>
+    
+      <!-- Profile -->
+      <div class="text-white me-4">
+        <i class="bi bi-person fs-5"></i>
+      </div>
+    
+      <!-- Cart -->
+      <div class="text-white position-relative">
+        <i class="bi bi-cart fs-5"></i>
+      </div>
+    </div>
+    
+  </nav>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebarMenu">
+    <div class="sidebar-close" id="closeSidebar">
+      <i class="bi bi-x-lg"></i>
+    </div>
+    <ul class="list-unstyled px-3">
+      <li class="py-2"><i class="bi bi-award me-2"></i> Exclusive At Croma</li>
+      <li class="py-2"><i class="bi bi-star me-2"></i> Top Brands</li>
+      <li class="py-2"><i class="bi bi-geo-alt me-2"></i> Croma Store Locator</li>
+      <li class="py-2"><i class="bi bi-gift me-2"></i> Gift Card</li>
+      <hr class="bg-secondary" />
+      <li class="fw-bold text-uppercase py-2">Shop by Category</li>
+      <li class="py-2">Televisions & Accessories</li>
+      <li class="py-2">Home Appliances</li>
+      <li class="py-2">Phones & Wearables</li>
+      <li class="py-2">Computers & Tablets</li>
+      <li class="py-2">Kitchen Appliances</li>
+      <li class="py-2">Audio & Video</li>
+    </ul>
+  </div>
+
+  <!-- Background Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
 
     <!-- Carousel Section -->
+   <div class="mt-2 pt-4">
     <div
-      id="carouselExampleIndicators"
-      class="carousel slide mt-3"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="3"
-          aria-label="Slide 4"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="4"
-          aria-label="Slide 5"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="5"
-          aria-label="Slide 6"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="6"
-          aria-label="Slide 7"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="7"
-          aria-label="Slide 8"
-        ></button>
-      </div>
-
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./images/img-1.webp" class="d-block w-100" alt="Slide 1" />
-        </div>
-        <div class="carousel-item">
-          <img src="./images/img-2.webp" class="d-block w-100" alt="Slide 2" />
-        </div>
-        <div class="carousel-item">
-          <img src="./images/img-3.webp" class="d-block w-100" alt="Slide 3" />
-        </div>
-        <div class="carousel-item">
-          <img src="./images/img-4.webp" class="d-block w-100" alt="Slide 4" />
-        </div>
-        <div class="carousel-item">
-          <img src="./images/img-5.webp" class="d-block w-100" alt="Slide 5" />
-        </div>
-        <div class="carousel-item">
-          <img src="./images/img-6.webp" class="d-block w-100" alt="Slide 6" />
-        </div>
-        <div class="carousel-item">
-          <img src="./images/img-7.webp" class="d-block w-100" alt="Slide 7" />
-        </div>
-        <div class="carousel-item">
-          <img src="./images/img-8.webp" class="d-block w-100" alt="Slide 8" />
-        </div>
-      </div>
-
+    id="carouselExampleIndicators"
+    class="carousel slide mt-3"
+    data-bs-ride="carousel"
+  >
+    <div class="carousel-indicators">
       <button
-        class="carousel-control-prev"
         type="button"
         data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="prev"
-      >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
       <button
-        class="carousel-control-next"
         type="button"
         data-bs-target="#carouselExampleIndicators"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="3"
+        aria-label="Slide 4"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="4"
+        aria-label="Slide 5"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="5"
+        aria-label="Slide 6"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="6"
+        aria-label="Slide 7"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide-to="7"
+        aria-label="Slide 8"
+      ></button>
     </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./images/img-1.webp" class="d-block w-100" alt="Slide 1" />
+      </div>
+      <div class="carousel-item">
+        <img src="./images/img-2.webp" class="d-block w-100" alt="Slide 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="./images/img-3.webp" class="d-block w-100" alt="Slide 3" />
+      </div>
+      <div class="carousel-item">
+        <img src="./images/img-4.webp" class="d-block w-100" alt="Slide 4" />
+      </div>
+      <div class="carousel-item">
+        <img src="./images/img-5.webp" class="d-block w-100" alt="Slide 5" />
+      </div>
+      <div class="carousel-item">
+        <img src="./images/img-6.webp" class="d-block w-100" alt="Slide 6" />
+      </div>
+      <div class="carousel-item">
+        <img src="./images/img-7.webp" class="d-block w-100" alt="Slide 7" />
+      </div>
+      <div class="carousel-item">
+        <img src="./images/img-8.webp" class="d-block w-100" alt="Slide 8" />
+      </div>
+    </div>
+
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+   </div>
 
     <!--all -icons-->
     <div class="main mt-5">
@@ -757,7 +753,7 @@
             <h5 class="mb-4">USEFUL LINKS</h5>
             <div class="row">
               <div class="col-6">
-                <ul class="list-unstyled">
+                <ul class="list-unstyled ee">
                   <li><a href="#" class="text-white-50 text-decoration-none">About Croma</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">Help And Support</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">FAQs</a></li>
@@ -771,7 +767,7 @@
               </div>
     
               <div class="col-6">
-                <ul class="list-unstyled">
+                <ul class="list-unstyled ee">
                   <li><a href="#" class="text-white-50 text-decoration-none">Site Map</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">Careers At Croma</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">Terms Of Use</a></li>
@@ -790,7 +786,7 @@
             <h5 class="mb-4">PRODUCTS</h5>
             <div class="row">
               <div class="col-6">
-                <ul class="list-unstyled">
+                <ul class="list-unstyled ee">
                   <li><a href="#" class="text-white-50 text-decoration-none">Televisions & Accessories</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">Home Appliances</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">Phones & Wearables</a></li>
@@ -802,7 +798,7 @@
               </div>
     
               <div class="col-6">
-                <ul class="list-unstyled">
+                <ul class="list-unstyled ee">
                   <li><a href="#" class="text-white-50 text-decoration-none">Grooming & Personal Care</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">Cameras & Accessories</a></li>
                   <li><a href="#" class="text-white-50 text-decoration-none">Smart Devices</a></li>
@@ -826,22 +822,26 @@
     ></script>
     <!-- Custom JS to handle toggle -->
     <script>
-      const menuToggle = document.getElementById("menuToggle");
-      const menuIcon = document.getElementById("menuIcon");
-      const menuContent = document.getElementById("menuContent");
+      
+      const openSidebar = document.getElementById("openSidebar");
+    const closeSidebar = document.getElementById("closeSidebar");
+    const sidebar = document.getElementById("sidebarMenu");
+    const overlay = document.getElementById("sidebarOverlay");
 
-      menuToggle.addEventListener("click", function () {
-        menuContent.classList.toggle("d-none");
+    openSidebar.addEventListener("click", () => {
+      sidebar.classList.add("show");
+      overlay.classList.add("show");
+    });
 
-        // Change icon
-        if (menuContent.classList.contains("d-none")) {
-          menuIcon.classList.remove("bi-x");
-          menuIcon.classList.add("bi-list");
-        } else {
-          menuIcon.classList.remove("bi-list");
-          menuIcon.classList.add("bi-x");
-        }
-      });
+    closeSidebar.addEventListener("click", () => {
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
+
+    overlay.addEventListener("click", () => {
+      sidebar.classList.remove("show");
+      overlay.classList.remove("show");
+    });
     </script>
   </body>
 </html>
