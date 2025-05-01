@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product-latest</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    rel="stylesheet"
+  />
+</head>
+<style>
+    body {
+  margin: 0;
+  padding: 0;
+  background-color: #191919;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
+    /* Sidebar styles */
+    #sidebarMenu {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #1c1c1c;
+      color: white;
+      z-index: 1050;
+      transition: left 0.3s ease;
+      overflow-y: auto;
+    }
+
+    #sidebarMenu.show {
+      left: 0;
+    }
+
+    #sidebarMenu a {
+      color: white;
+      text-decoration: none;
+    }
+
+    #sidebarMenu a:hover {
+      background-color: #2a2a2a;
+    }
+
+    .sidebar-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1040;
+      display: none;
+    }
+
+    .sidebar-overlay.show {
+      display: block;
+    }
+
+    .sidebar-close {
+      text-align: right;
+      padding: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+/* Navbar */
+
+.navbar {
+  transition: background-color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-brand img {
+  height: 35px;
+}
+
+.form-control::placeholder {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.nav-item {
+  font-size: 0.9rem;
+}
+
+.badge {
+  font-size: 0.7rem;
+}
+
+#menuContent {
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+#menuContent.show {
+  max-height: 300px;
+  padding: 20px;
+}
+
+</style>
+<body>
+
+    <!--header-->
+    <nav class="navbar navbar-dark bg-black fixed-top px-3 py-2">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1637759004/Croma%20Assets/CMS/Category%20icon/Final%20icon/Croma_Logo_acrkvn.svg"
+            alt="Croma Logo"
+            height="30"
+          />
+        </a>
+        <div class="d-flex align-items-center">
+          <button class="btn btn-dark border-0" id="openSidebar">
+            <i class="bi bi-list fs-3"></i>
+          </button>
+          <span class="text-white fw-semibold ms-2">Menu</span>
+        </div>
+        <form class="d-flex mx-auto w-50">
+          <input class="form-control me-2" type="search" placeholder="What are you looking for ?" />
+          <button class="btn btn-outline-light" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+    
+          </button>
+          
+          
+        </form>
+        <div class="d-flex align-items-center ms-auto">
+          <!-- Location -->
+          <div class="d-flex align-items-center text-white me-4">
+            <i class="bi bi-geo-alt fs-5 me-1"></i>
+            <span>Mumbai, 400049</span>
+          </div>
+        
+          <!-- Profile -->
+          <div class="text-white me-4">
+            <i class="bi bi-person fs-5"></i>
+          </div>
+        
+          <!-- Cart -->
+          <div class="text-white position-relative">
+            <i class="bi bi-cart fs-5"></i>
+          </div>
+        </div>
+        
+      </nav>
+    
+      <!-- Sidebar Menu -->
+      <div id="sidebarMenu">
+        <div class="sidebar-close" id="closeSidebar">
+          <i class="bi bi-x-lg"></i>
+        </div>
+        <ul class="list-unstyled px-3 colour">
+          <li class="py-2"><i class="bi bi-award me-2"></i> Exclusive At Croma</li>
+          <li class="py-2"><i class="bi bi-star me-2"></i> Top Brands</li>
+          <li class="py-2"><i class="bi bi-geo-alt me-2"></i> Croma Store Locator</li>
+          <li class="py-2"><i class="bi bi-gift me-2"></i> Gift Card</li>
+          <hr class="bg-secondary" />
+          <li class="fw-bold text-uppercase py-2">Shop by Category</li>
+          <li class="py-2">Televisions & Accessories</li>
+          <li class="py-2">Home Appliances</li>
+          <li class="py-2">Phones & Wearables</li>
+          <li class="py-2">Computers & Tablets</li>
+          <li class="py-2">Kitchen Appliances</li>
+          <li class="py-2">Audio & Video</li>
+        </ul>
+      </div>
+    
+      <!-- Background Overlay -->
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    
+</body>
+</html>

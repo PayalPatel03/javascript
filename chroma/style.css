@@ -177,3 +177,11 @@ marquee img {
 .social-icons a .fa-instagram:hover{
   color: rgb(63, 63, 135);
 }
+
+.colour li:hover{
+  background-color: #63e6be !important;
+  color: black;
+}
+.colour li{
+  background-color: rgb(71, 70, 70);
+}
