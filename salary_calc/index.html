@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Salary Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    .container {
+      max-width: 400px;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px #aaa;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    button {
+      width: 48%;
+      padding: 10px;
+      margin: 5px 1%;
+      border: none;
+      background: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button.reset {
+      background: #dc3545;
+    }
+    .result {
+      margin-top: 15px;
+      padding: 10px;
+      background: #f0f0f0;
+      border-radius: 5px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Salary Calculator</h2>
+    
+    <label>Basic Salary</label>
+    <input type="number" id="basic" placeholder="Enter basic salary" required>
+
+    <label>Allowances</label>
+    <input type="number" id="allowances" placeholder="Enter allowances">
+
+    <label>Deductions</label>
+    <input type="number" id="deductions" placeholder="Enter deductions">
+
+    <label>Tax Rate (%)</label>
+    <input type="number" id="tax" placeholder="Enter tax rate">
+
+    <label>Overtime Hours</label>
+    <input type="number" id="otHours" placeholder="Enter overtime hours">
+
+    <label>Overtime Rate</label>
+    <input type="number" id="otRate" placeholder="Enter overtime rate">
+
+    <div>
+      <button onclick="calculateSalary()">Calculate</button>
+      <button class="reset" onclick="resetForm()">Reset</button>
+    </div>
+
+    <div class="result" id="resultBox"></div>
+  </div>
+
+  <script>
+    function calculateSalary() {
+      let basic = parseFloat(document.getElementById('basic').value) || 0;
+      let allowances = parseFloat(document.getElementById('allowances').value) || 0;
+      let deductions = parseFloat(document.getElementById('deductions').value) || 0;
+      let taxRate = parseFloat(document.getElementById('tax').value) || 0;
+      let otHours = parseFloat(document.getElementById('otHours').value) || 0;
+      let otRate = parseFloat(document.getElementById('otRate').value) || 0;
+
+      if (basic <= 0) {
+        alert("Please enter a valid Basic Salary");
+        return;
+      }
+
+      let gross = basic + allowances;
+      let tax = (gross * taxRate) / 100;
+      let totalDeductions = deductions + tax;
+      let net = gross - totalDeductions;
+      let overtime = otHours * otRate;
+      let finalSalary = net + overtime;
+
+      let resultHTML = `
+        <p><b>Gross Salary:</b> ₹${gross.toFixed(2)}</p>
+        <p><b>Total Deductions:</b> ₹${totalDeductions.toFixed(2)} (including Tax ₹${tax.toFixed(2)})</p>
+        <p><b>Net Salary:</b> ₹${net.toFixed(2)}</p>
+        <p><b>Overtime Earnings:</b> ₹${overtime.toFixed(2)}</p>
+        <p><b>Final Salary:</b> ₹${finalSalary.toFixed(2)}</p>
+      `;
+      document.getElementById('resultBox').innerHTML = resultHTML;
+      document.getElementById('resultBox').style.display = 'block';
+    }
+
+    function resetForm() {
+      document.querySelectorAll('input').forEach(input => input.value = '');
+      document.getElementById('resultBox').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

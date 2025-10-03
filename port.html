@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steve Milner - Web Designer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<style>
+    :root {
+  --bg-dark: #1a1a1a;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --btn-bg: #ffc107;
+  --nav-bg: #2b2b2b;
+  --nav-icon: #3a3a3a;
+  --nav-color: #888;
+}
+
+body.light-mode {
+  --bg-dark: #f5f5f5;
+  --text-light: #1a1a1a;
+  --text-muted: #555;
+  --btn-bg: #ffc107;
+  --nav-bg: #eaeaea;
+  --nav-icon: #ddd;
+  --nav-color: #444;
+}
+
+    body {
+    font-family: Arial, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-container {
+    height: 100vh;
+    background-color: #1a1a1a; /* Dark background for the right section */
+}
+
+/* Left Section (Yellow Background and Image) */
+.left-section {
+    width: 35%; /* Adjust as needed */
+    background-color: #ffc107; /* Yellow */
+    position: relative;
+    padding: 20px; /* Add some padding around the image container */
+}
+
+.image-wrapper {
+    width: 80%; /* Adjust image container size */
+    max-width: 400px; /* Max width for the image wrapper */
+    aspect-ratio: 1/1; /* Make it square */
+    border-radius: 1.5rem; /* Match the rounded corners of the image */
+    overflow: hidden;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    border-radius: 1.5rem; /* Apply border-radius to the image itself */
+}
+
+.dot-indicator {
+    width: 20px;
+    height: 20px;
+    background-color: #ffc107; /* Yellow */
+    border-radius: 50%;
+    border: 3px solid #fff;
+    top: 5%; /* Adjust position */
+    right: 5%; /* Adjust position */
+    z-index: 10;
+}
+
+/* Right Section (Content and Navigation) */
+.right-section {
+    background-color: #1a1a1a;
+    position: relative;
+}
+
+.top-bar {
+    text-align: right;
+    color: #fff;
+}
+
+.top-bar i {
+    cursor: pointer;
+}
+
+.content {
+    padding-left: 100px; /* Adjust spacing for content */
+    padding-right: 100px;
+}
+
+.yellow-line {
+    display: inline-block;
+    width: 40px;
+    height: 4px;
+    background-color: #ffc107; /* Yellow */
+    vertical-align: middle;
+    margin-right: 15px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #cccccc;
+    line-height: 1.6;
+    max-width: 700px; /* Limit paragraph width for readability */
+}
+
+.custom-button {
+    background-color: #ffc107; /* Yellow */
+    border-color: #ffc107; /* Yellow */
+    color: #1a1a1a; /* Dark text for button */
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+    border-color: #e0a800;
+    color: #1a1a1a;
+}
+
+.custom-button i {
+    margin-left: 10px;
+}
+
+.navigation-sidebar {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #2b2b2b; /* Slightly lighter dark for nav */
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    padding: 20px 10px;
+    height: 60%; /* Adjust height as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #3a3a3a; /* Darker grey for inactive icons */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888; /* Lighter grey for inactive icons */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-icon:hover {
+    background-color: #ffc107; /* Yellow on hover */
+    color: #1a1a1a; /* Dark text on hover */
+}
+
+.nav-icon.active {
+    background-color: #ffc107; /* Yellow for active icon */
+    color: #1a1a1a; /* Dark text for active icon */
+}
+/* Left Slider Styles */
+.left-slider {
+    width: 0; /* Initially hidden */
+    background-color: #343a40; /* Dark background for the slider */
+    color: #fff;
+    height: 100vh;
+    overflow-x: hidden;
+    transition: width 0.3s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.left-slider.show {
+    width: 250px; /* Adjust width as needed */
+}
+
+.main-container.slide-right {
+    transform: translateX(250px); /* Push the main content to the right */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Adjust main-container for fixed slider */
+.main-container {
+    position: relative; /* Needed for proper z-indexing if other fixed elements exist */
+    flex-grow: 1; /* Ensure it takes remaining width */
+    transition: transform 0.3s ease-in-out; /* Add transition for smooth sliding */
+}
+
+/* Responsive adjustments (modify as needed for the slider) */
+
+@media (max-width: 768px) {
+    /* Further responsive adjustments */
+    .left-slider.show {
+        width: 180px;
+    }
+
+    .main-container.slide-right {
+        transform: translateX(180px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-section {
+        width: 100%;
+        height: 300px; /* Fixed height for image section on smaller screens */
+        padding: 20px;
+    }
+
+    .image-wrapper {
+        width: 60%; /* Adjust image size for smaller screens */
+        max-width: 250px;
+        height: auto;
+    }
+
+    .right-section {
+        width: 100%;
+        padding-top: 20px;
+    }
+
+    .content {
+        padding: 30px; /* Adjust padding for smaller screens */
+        text-align: center;
+    }
+
+    .navigation-sidebar {
+        position: static; /* Stack navigation on smaller screens */
+        transform: none;
+        flex-direction: row;
+        width: 100%;
+        border-radius: 0;
+        padding: 10px 0;
+        justify-content: center;
+        gap: 10px; /* Space between icons */
+        margin-top: 20px;
+    }
+
+    .nav-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .top-bar {
+        text-align: center;
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .custom-button {
+        padding: 0.6rem 1.5rem;
+    }
+}
+.nav-icon {
+    position: relative;
+    overflow: visible;
+}
+
+.nav-label {
+    position: absolute;
+    right: 40px;
+    background-color: #ffc107;
+    color: #1a1a1a;
+    padding: 15px 12px;
+    border-radius: 50px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.nav-icon:hover .nav-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+</style>
+
+    
+
+    <body class="d-flex">
+    <div class="left-slider bg-dark text-white p-4">
+        
+        </div>
+
+    <div class="main-container d-flex flex-grow-1">
+        <div class="left-section d-flex align-items-center justify-content-center">
+            <div class="image-wrapper position-relative">
+                <img src="/fitness/images/teacher2.png" alt="Steve Milner" class="img-fluid rounded-4">
+                <div class="dot-indicator position-absolute"></div>
+            </div>
+        </div>
+
+        <div class="right-section flex-grow-1 d-flex flex-column">
+            <div class="top-bar d-flex justify-content-end p-4">
+                <i class="fas fa-sun text-white fs-4"></i>
+            </div>
+            <div class="content flex-grow-1 d-flex flex-column justify-content-center p-5">
+                <div class="intro-text">
+                    <h2 class="text-white mb-2"><span class="yellow-line"></span> I'M STEVE MILNER.</h2>
+                    <h1 class="text-white display-4 fw-bold mb-4">WEB DESIGNER</h1>
+                    <p class="text-white-50 fs-5 mb-5">
+                        I'm a Tunisian based web designer & front-end developer focused on crafting clean & user-friendly experiences. I am passionate about building excellent software that improves the lives of those around me.
+                    </p>
+                    <button class="btn  btn-lg custom-button">
+                        MORE ABOUT ME <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="navigation-sidebar d-flex flex-column justify-content-around align-items-center py-4">
+                <div class="nav-icon active home-icon">
+  <i class="fas fa-home"></i>
+  <span class="nav-label">Home</span>
+</div>
+<div class="nav-icon">
+  <i class="fas fa-user"></i>
+  <span class="nav-label">About</span>
+</div>
+<div class="nav-icon">
+  <i class="fas fa-briefcase"></i>
+  <span class="nav-label">Portfolio</span>
+</div>
+<div class="nav-icon">
+  <i class="fas fa-envelope"></i>
+  <span class="nav-label">Contact</span>
+</div>
+<div class="nav-icon">
+  <i class="fas fa-comments"></i>
+  <span class="nav-label">Messages</span>
+</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+       const homeIcon = document.querySelector('.home-icon');
+  const leftSlider = document.querySelector('.left-slider');
+  const mainContainer = document.querySelector('.main-container');
+  const sunIcon = document.querySelector('.fa-sun');
+
+  homeIcon.addEventListener('click', () => {
+    leftSlider.classList.toggle('show');
+    mainContainer.classList.toggle('slide-right');
+  });
+
+  sunIcon.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+
+    // Toggle sun/moon icon for better UX (optional)
+    if (sunIcon.classList.contains('fa-sun')) {
+      sunIcon.classList.remove('fa-sun');
+      sunIcon.classList.add('fa-moon');
+    } else {
+      sunIcon.classList.remove('fa-moon');
+      sunIcon.classList.add('fa-sun');
+    }
+  });
+    </script>
+</body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
